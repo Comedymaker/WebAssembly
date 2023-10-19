@@ -1,0 +1,4 @@
+NSDI2022 - Provably-Safe Multilingual Software Sandboxing using WebAssembly
+MobiSys2021 - Bringing webassembly to resource-constrained iot devices for seamless device-cloud integration
+INFOCOM2021 - WiProg: A WebAssembly-based Approach to Integrated IoT Programming
+MobiSys2021 - ThingSpire OS: a WebAssembly-based IoT operating system for cloud-edge integration
