@@ -1,4 +1,8 @@
+接下来请你开始去了解WebAssembly，尤其是WasmEdge。有了一定的理解之后，请尝试阅读下面这几篇文章：
+
 NSDI2022 - Provably-Safe Multilingual Software Sandboxing using WebAssembly
 MobiSys2021 - Bringing webassembly to resource-constrained iot devices for seamless device-cloud integration
 INFOCOM2021 - WiProg: A WebAssembly-based Approach to Integrated IoT Programming
 MobiSys2021 - ThingSpire OS: a WebAssembly-based IoT operating system for cloud-edge integration
+
+这几年关于WebAssembly的最好的研究大部分都发表在与安全相关的顶会上，比如S&P，USENIX Security等。上面这几篇是我知道的从安全以外的角度去研究WebAssembly的。请你阅读之后，再阅读几篇安全顶会上的关于WebAssembly的文章，并尝试思考WebAssembly和WasmEdge对边缘计算和边缘智能的意义。之后我会安排你做一个报告，让组里的成员一起学习一下。
