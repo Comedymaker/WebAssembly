@@ -26,3 +26,8 @@ https://www.zhihu.com/question/304577684
 some refs:
 
 + https://m.elecfans.com/article/1972391.html
++ [why docker and wasm work together](https://www.docker.com/blog/why-containers-and-webassembly-work-well-together/)
+
+main users:
+
+https://wasmedge.org/docs/contribute/users/
