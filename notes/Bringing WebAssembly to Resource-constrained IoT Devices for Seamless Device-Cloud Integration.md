@@ -37,3 +37,20 @@ resource-constrained devices, which are commonly deployed in the wild, have diff
 
 ![image-20231030102321705](img\image-20231030102321705.png)
 
+##### Lightweight WebAssembly runtime
+
++ due to the limit of RAM, WAIT adopts a streamed compilation to read and translate the bytecode instruction-by-instruction
++ As for Wasm, it is designed as a stack machine. It abandons simple jump instructions, and instead provides completely structured control-flow instructions. Therefore WAIT needs to convert structured control-flow instructions because resource-constrained devices only support direct jump.
++ The stack state is critical to the execution correctness of WebAssembly, but the native jump instructions on the IoT device will not keep an eye on the stack. Therefore WAIT leverages lightweight stack restoring to take care of the stack before and after the block-type instructions.
++ this naive approach suffers from frequent linear memory shortage because the heap only takes up a small portion of the RAM —— To trim off the unnecessary data before we execute the WebAssembly module to reserve more space for the linear memory:
+  + leverages a new section named .wait to assign useful data structures
+  + instrument the malloc() for those variables which are the  parameters of the heap, assign them to the .wait section
++ Move the constant data from RAM to the flash space —— WAIT leverages a linear memory (LM) jump table, which is located in the .wait section, that maps the logical and physical address?may lead to run-time overhead because flash is slower?
+
+##### Two-phase sandbox checks
+
++ Protecting CFI(control-flow integrity)
++ Ensuring memory safety
+
+##### Energy optimization of the compilation and execution phase
+
