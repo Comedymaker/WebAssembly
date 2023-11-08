@@ -52,5 +52,18 @@ resource-constrained devices, which are commonly deployed in the wild, have diff
 + Protecting CFI(control-flow integrity)
 + Ensuring memory safety
 
+<img src="C:\Users\54473\AppData\Roaming\Typora\typora-user-images\image-20231108094653910.png" alt="image-20231108094653910" style="zoom:150%;" />
+
 ##### Energy optimization of the compilation and execution phase
+
+(for both compile-time and execution-time)
+
++ Bulk instruction writing for translated assembly
++ IoT-related APIs and I/O direct accessing at run-time
+  + provide APIs for peripheral-accessing and duty-cycling
+  + implement each API in our runtime and import these implementations to the application via the IMPORT mechanism of WebAssembly
+
+##### Device-cloud Integration Agent
+
+—— To communicate with the cloud server periodically to check if there is a WebAssembly module to load
 
