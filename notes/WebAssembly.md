@@ -14,6 +14,13 @@ https://www.zhihu.com/question/304577684
 
 
 
+##### Why wasm can be used in the Edge Computing
+
++ 跨平台（多设备支持）
++ 高性能，低功耗
++ 移植性（多语言支持）
++ 安全性（沙盒执行环境）
+
 ##### WebAssembly System Interface (Wasi)
 
 + WASI stands for WebAssembly System Interface. It's an API designed by the [Wasmtime](https://github.com/bytecodealliance/wasmtime) project that provides access to several operating-system-like features, including files and filesystems, Berkeley sockets, clocks, and random numbers, that we'll be proposing for standardization.
@@ -31,3 +38,8 @@ some refs:
 main users:
 
 https://wasmedge.org/docs/contribute/users/
+
+##### C2Wsam
+
+https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm
+
