@@ -120,7 +120,9 @@ TODO
 
 https://github.com/WebAssembly/wasi-nn
 
-TODO
+##### A video about wasi-nn
+
+https://www.youtube.com/watch?v=lz2I_4vvCuc
 
 ##### ChatGPT
 
@@ -136,6 +138,28 @@ TODO
 >    - 在Web平台上，Wasm可以让机器学习模型在浏览器中运行，而无需依赖于插件或特定的扩展。这为开发者提供了在Web应用中利用机器学习功能的可能性。
 > 6. **库和工具支持**：
 >    - 一些机器学习框架和工具已经开始支持将模型编译为Wasm格式，这为开发者提供了更多选择，并使得在不同环境中部署机器学习模型更加方便。
+
+##### Tensorflow
+
++ TensorFlow是一个开源的机器学习框架，由Google开发并维护。它被广泛用于构建和训练各种机器学习模型，包括神经网络、深度学习模型等。TensorFlow提供了一个灵活而强大的平台，可用于实现从简单的线性回归到复杂的深度学习模型等各种机器学习任务。它支持多种编程语言，主要是Python，但也有针对其他语言的接口和支持。
++ TensorFlow.js是TensorFlow的JavaScript版本，专门用于在浏览器和Node.js环境中运行机器学习模型。它允许开发者使用JavaScript构建、训练和部署机器学习模型，无需依赖服务器端或专门的机器学习硬件。TensorFlow.js提供了一套API，使得在Web应用程序中运行机器学习模型变得更加简单，同时也能与其他Web技术和库结合使用，例如HTML、CSS等。这使得在Web上进行实时推理、图像识别、自然语言处理等任务成为可能。
++ 在某些情况下，TensorFlow.js可以与WebAssembly结合使用。例如，一些机器学习框架或模型可以通过WebAssembly编译成适用于浏览器的格式，然后由TensorFlow.js加载和运行。这样做的目的是利用WebAssembly的性能优势，使得模型在浏览器中运行时更加高效。因此，尽管它们是不同的技术，但在一些情况下可以共同发挥作用，以提高浏览器中机器学习模型的性能和效率。
+
+##### Wasi-nn（***A WASI API for performing ML inference***）
+
+ref: https://bytecodealliance.org/articles/using-wasi-nn-in-wasmtime
+
+允许WebAssembly程序访问主机提供的机器学习（ML）功能
+
+为什么需要wasi-nn：
+
++ Wasm规范必须考虑所有CPU架构的限制，因此无法利用任何单个架构（在我们的情况下是x86）的专用指令以达到最佳性能。
++ 许多ML模型利用辅助处理单元（例如GPU、TPU）。目前很难看到Wasm如何编译到这些设备（至少目前是如此），因此需要其他一些方式来使用这些设备——像wasi-nn这样的高级API提供了一种利用它们的方式。
+
+主要设计目标：
+
++ 允许用户使用现有模型（即易用性）并以最大性能从WebAssembly进行机器学习推理。
++ 使API与框架和模型无关；这允许使用多个机器学习框架和模型格式来实现API。
 
 ### WASM for Edge Computing —— First Part
 
@@ -165,6 +189,8 @@ Wasm的微小体积和安全沙盒意味着它可以在任何地方安全执行�
 
 一个经过优化的Wasm模块通常大小在20KB到30KB左右。与Kubernetes容器（通常是几百MB）相比，我们想要分发的Wasm计算单元要小几个数量级。它们较小的尺寸减少了加载时间，增加了可移植性，并意味着我们甚至可以在更接近用户的地方运行它们。
 
+https://zhuanlan.zhihu.com/p/112387861
+
 ##### Wasm与跨平台
 
 跨边缘运行的应用程序经常面临设备多样性所带来的挑战。以向边缘设备传输视频为例。在这些设备上，有成千上万种独特的操作系统、硬件和版本组合，需要为您的应用程序提供高性能的扩展。如今，团队通过为每个部署域构建不同版本的应用程序来解决这个问题——一个用于Windows，一个用于Linux，一个用于Mac，针对x86架构。通用组件有时可以跨越边界，但它们往往受到微妙的差异和漏洞的困扰。这令人筋疲力尽。
@@ -189,3 +215,4 @@ WebAssembly for Edge Computing:  Potential and Challenges
 4. JavaScript —— 缺乏语言独立性、性能过差
 
 ![image-20231126112845842](img\Comparison of code execution environments)
+
