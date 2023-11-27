@@ -13,7 +13,7 @@ about WASM: https://dl.acm.org/doi/pdf/10.1145/3062341.3062363
 
 ###### Modules
 
-![img](E:\WebAssembly\notes\img\v2-91645e03d95eceebd23ceca5e9ff4b1b_720w.png)
+![img](img\v2-91645e03d95eceebd23ceca5e9ff4b1b_720w.png)
 
 <img src="img\image-20231118120417983.png" alt="image-20231118120417983" style="zoom:150%;" />
 
