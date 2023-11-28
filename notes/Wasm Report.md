@@ -116,6 +116,10 @@ https://github.com/juj/wasm_webgpu
 
 TODO
 
+### WASM应用
+
+https://reneeshah.medium.com/how-webassembly-gets-used-the-18-most-exciting-startups-building-with-wasm-939474e951db
+
 ### WASM for ML
 
 https://github.com/WebAssembly/wasi-nn
